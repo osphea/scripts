@@ -1,7 +1,7 @@
 # YouCompleteMe for Fuchsia Developers
 
 You can use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) to
-provide error checking, completion and source navigation within the Fuchsia
+provide error checking, completion and source navigation within the Dahlia
 tree.
 
 YouCompleteMe works natively with Vim but it can also be integrated
@@ -36,22 +36,22 @@ or `fx -i compdb` if you want it rebuilt automatically as you edit files.
 ### Other editors (ycmd)
 
 You'll need to set the ycmd config option `global_ycm_extra_conf` to point to
-`${FUCHSIA_DIR}/scripts/youcompleteme/ycm_extra_conf.py`.
-Note you may need to manually replace `${FUCHSIA_DIR}` with the correct path.
+`${DAHLIA_DIR}/scripts/youcompleteme/ycm_extra_conf.py`.
+Note you may need to manually replace `${DAHLIA_DIR}` with the correct path.
 
 Alternatively, you can create a `.ycm_extra_conf.py` symbolic link to let YCM
-automatically find the config for any fuchsia repository:
+automatically find the config for any dahlia repository:
 
 ```
-ln -s $FUCHSIA_DIR/scripts/youcompleteme/ycm_extra_conf.py $FUCHSIA_DIR/.ycm_extra_conf.py
+ln -s $DAHLIA_DIR/scripts/youcompleteme/ycm_extra_conf.py $DAHLIA_DIR/.ycm_extra_conf.py
 ```
 
 **Googlers only**: you'll also need to setup
-`${FUCHSIA_DIR}/scripts/youcompleteme/default_settings.json` as the default
+`${DAHLIA_DIR}/scripts/youcompleteme/default_settings.json` as the default
 settings path in your editor, in order to disable the internal `use_clangd`
 flag. If you want to use clangd, you can additionally edit that file to set
 `use_clangd` to 1, and `clang_binary_path` to
-`${FUCHSIA_BUILDTOOLS_DIR}/clang/bin/clangd`. Remember that in that case, you'll
+`${DAHLIA_BUILDTOOLS_DIR}/clang/bin/clangd`. Remember that in that case, you'll
 need to build a compilation database with `fx compdb`.
 
 ## See also
