@@ -33,7 +33,8 @@ fi
 # The fetched script will
 # - create "fuchsia" directory if it does not exist,
 # - download "jiri" command to "fuchsia/.jiri_root/bin"
-curl -s "https://raw.githubusercontent.com/dahlia-os/jiri/master/scripts/bootstrap_jiri" | base64 --decode | bash -s dahlia
+curl https://raw.githubusercontent.com/dahlia-os/jiri/master/scripts/bootstrap_jiri -o ~/bootstrap_jiri
+./bootstrap_jiri dahlia
 cd dahlia
 
 .jiri_root/bin/jiri import -name="integration" "${project}/${project}" "https://fuchsia.googlesource.com/integration"
